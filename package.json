@@ -1,0 +1,46 @@
+{
+  "name": "blockchain-explorer",
+  "version": "1.0.0",
+  "description": "Mini Blockchain Explorer",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "npm run clean:common && npm run clean:api && npm run clean:indexer",
+    "clean:common": "cd packages/common && npm run clean",
+    "clean:api": "cd packages/api && npm run clean",
+    "clean:indexer": "cd packages/indexer && npm run clean",
+    "build": "npm run build:common && npm run build:api && npm run build:indexer",
+    "build:common": "cd packages/common && npm run build",
+    "build:api": "cd packages/api && npm run build",
+    "build:indexer": "cd packages/indexer && npm run build",
+    "dev": "concurrently \"npm run dev:common\" \"npm run dev:api\" \"npm run dev:indexer\"",
+    "dev:common": "cd packages/common && npm run dev",
+    "dev:api": "cd packages/api && npm run dev",
+    "dev:indexer": "cd packages/indexer && npm run dev",
+    "start": "concurrently \"npm run start:api\" \"npm run start:indexer\"",
+    "start:api": "cd packages/api && npm start",
+    "start:indexer": "cd packages/indexer && npm start",
+    "setup": "npm install && npm run build",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "blockchain",
+    "explorer",
+    "ethereum",
+    "nodejs",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "concurrently": "^8.2.2",
+    "jsonwebtoken": "^9.0.2",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.2"
+  }
+}

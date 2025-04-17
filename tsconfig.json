@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@blockchain-explorer/common": ["packages/common/dist"],
+      "@blockchain-explorer/common/*": ["packages/common/dist/*"]
+    },
+    "composite": true
+  },
+  "files": [],
+  "references": [
+    { "path": "./packages/common" },
+    { "path": "./packages/api" },
+    { "path": "./packages/indexer" }
+  ]
+}

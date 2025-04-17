@@ -1,0 +1,28 @@
+{
+  "name": "@blockchain-explorer/common",
+  "version": "1.0.0",
+  "description": "Shared code for blockchain explorer services",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "dev": "tsc -w --preserveWatchOutput",
+    "test": "jest"
+  },
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "pg": "^8.11.3",
+    "typeorm": "^0.3.17",
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.4",
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.10.9",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.2"
+  }
+}

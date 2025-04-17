@@ -1,0 +1,29 @@
+{
+  "name": "@blockchain-explorer/indexer",
+  "version": "1.0.0",
+  "description": "Blockchain indexer service",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "dev": "ts-node-dev --respawn --transpile-only --project ./tsconfig.json src/index.ts",
+    "build": "tsc --build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@blockchain-explorer/common": "1.0.0",
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0",
+    "ts-node": "^10.9.2",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.4",
+    "@types/node": "^20.10.0",
+    "rimraf": "^5.0.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.2"
+  }
+}
